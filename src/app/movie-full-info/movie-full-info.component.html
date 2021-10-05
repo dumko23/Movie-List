@@ -1,0 +1,20 @@
+<div class="movie">
+  <span id="go-back-button" (click)="this.goBack()">Go Back</span>
+
+  <div class="movie-info">
+    <img src="{{ movie.image }}" style="width: 200px; height: 300px">
+    <div class="info">
+      <span class="title"> Title: {{ movie.title }}</span>
+      <span>Rating: {{ movie.imDbRating }}</span>
+      <span>Year: {{ movie.year }}</span>
+      <span>Directors: {{ movie.directors }} </span>
+      <span>Writers: {{ movie.writers }}</span>
+      <span>Stars: {{ movie.stars }}</span>
+      <span>Genres: {{ movie.genres }}</span>
+      <span>Plot: {{ movie.plot }}</span>
+    </div>
+  </div>
+  <div class="movie-links">
+    <a href="{{ link.officialWebsite }}" target="_blank">Official Website</a>
+  </div>
+</div>

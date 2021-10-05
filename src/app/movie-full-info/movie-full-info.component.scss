@@ -1,0 +1,76 @@
+@mixin flex($direction: column) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-around;
+}
+
+.movie{
+  @include flex();
+  padding: 2rem;
+  height: 100%;
+
+  #go-back-button{
+    background-color: indigo;
+    cursor: pointer;
+    padding: 1.5rem 2.5rem;
+    margin-top: 1rem;
+    color: white;
+    font-size: 1.25rem;
+  }
+
+  #go-back-button:hover{
+    background-color: DarkViolet;
+  }
+
+  .movie-info{
+    @include flex($direction: row);
+    padding: 1rem 0;
+
+    .info{
+      @include flex;
+      margin-left: 2rem;
+      color: white;
+
+      .title{
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  .movie-links{
+    @include flex;
+
+    a{
+      color: black;
+      text-align: center;
+      text-decoration: none;
+      cursor: pointer;
+      background-color: indigo;
+      padding: 1rem;
+    }
+    a:hover{
+      background-color: DarkViolet;
+    }
+  }
+}
+
+@media (max-width: 1100px) {
+  .movie{
+    .movie-info{
+
+    }
+  }
+}
+
+@media (max-width: 600px){
+  .movie{
+    .movie-info{
+      @include flex;
+
+      .info{
+        margin-left: 0;
+        padding: 0.5rem 0;
+      }
+    }
+  }
+}

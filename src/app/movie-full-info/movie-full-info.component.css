@@ -1,0 +1,64 @@
+.movie {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 2rem;
+  height: 100%;
+}
+.movie #go-back-button {
+  background-color: indigo;
+  cursor: pointer;
+  padding: 1.5rem 2.5rem;
+  margin-top: 1rem;
+  color: white;
+  font-size: 1.25rem;
+}
+.movie #go-back-button:hover {
+  background-color: DarkViolet;
+}
+.movie .movie-info {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem 0;
+}
+.movie .movie-info .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-left: 2rem;
+  color: white;
+}
+.movie .movie-info .info .title {
+  font-size: 1.5rem;
+}
+.movie .movie-links {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+.movie .movie-links a {
+  color: black;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  background-color: indigo;
+  padding: 1rem;
+}
+.movie .movie-links a:hover {
+  background-color: DarkViolet;
+}
+
+@media (max-width: 600px) {
+  .movie .movie-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .movie .movie-info .info {
+    margin-left: 0;
+    padding: 0.5rem 0;
+  }
+}
+
+/*# sourceMappingURL=movie-full-info.component.css.map */

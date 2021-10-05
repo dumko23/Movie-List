@@ -1,0 +1,52 @@
+<div class="nav-bar">
+  <input type="text"
+         [ngStyle]="value === ''? {'width': '100%'}: {'width': '91.15%'}"
+         [(ngModel)]="value"
+         placeholder="Search..">
+  <span class="search-icon"
+        *ngIf="value"
+        (click)="clearSearchResult()">
+    <fa-icon [icon]="faClose"></fa-icon>
+  </span>
+  <span class="search-icon"
+        (click)="searchMovie(value)">
+    <fa-icon [icon]="faSearch"
+    ></fa-icon>
+  </span>
+  <a class="nav-link"
+     routerLink="/dashboard">Main Page</a>
+  <a class="nav-link"
+     routerLink="/movies/{{top250}}"
+  >Top-250 of IMDb</a>
+  <a class="nav-link"
+     routerLink="/movies/{{top200}}"
+     id="risky-link"
+  >Top-200 Most Popular</a>
+</div>
+<div class="dropdown" *ngIf="searchResult.length > 0">
+  <span style="padding: 1rem;">Search result:</span>
+  <a class="searchResult"
+     *ngFor="let result of searchResult"
+     routerLink="/full-info/{{ result.id }}"
+     (click)="clearSearchResult()">
+    <img src="{{ result.image }}">
+    <div class="movie-info">
+      <span> Title: {{ result.title }}</span>
+      <span>{{ result.id }}</span>
+    </div>
+  </a>
+</div>
+<div class="no-result" *ngIf="searchResult.length === 0 && searchTrigger">
+  <span>Nothing found...</span>
+  <span>Try to enter the title of the movie</span>
+</div>
+
+
+
+
+
+
+
+
+
+

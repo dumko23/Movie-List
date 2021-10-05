@@ -1,0 +1,35 @@
+<div class="movies">
+  <a id="top"></a>
+  <div class="filter-div">
+    <span class="filter-type">Filter by Years:</span>
+    <span class="filter"
+          [ngStyle]="activeFilter === '1'? {'background-color':'DarkViolet'}: null"
+          (click)="activateFilter('0', '2001', '1');">... - 2000</span>
+    <span class="filter"
+          [ngStyle]="activeFilter === '2'? {'background-color':'DarkViolet'}: null"
+          (click)="activateFilter('2000', '2011', '2');">2001 - 2010</span>
+    <span class="filter"
+          [ngStyle]="activeFilter === '3'? {'background-color':'DarkViolet'}: null"
+          (click)="activateFilter('2010', '2022', '3');">2011 - ...</span>
+    <span class="filter"
+          (click)="activateFilter('', '', '')">Reset filter</span>
+  </div>
+  <div class="movie-grid">
+    <a class="movie-link-top" *ngFor="let movie of movieTop
+    | filter: year1: year2" routerLink="/full-info/{{movie.id}}"
+    >
+      <div class="movie-palette-top">
+        <span class="info">№ {{ movie.rank }}</span>
+        <img src="{{ movie.image }}">
+        <span class="title info"> Title: {{ movie.title }}</span>
+        <span class="info">Rating: {{ movie.imDbRating }}</span>
+        <span class="info">Year: {{ movie.year }}</span>
+      </div>
+    </a>
+    <a class="go-top" (click)="goTop()">To the top
+      <fa-icon [icon]="faUp"></fa-icon>
+    </a>
+  </div>
+</div>
+
+

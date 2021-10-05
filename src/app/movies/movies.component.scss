@@ -1,0 +1,183 @@
+@mixin flex($direction: row) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: space-around;
+}
+
+.movies{
+  margin-top: 5vh;
+
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+
+  .filter-div{
+    @include flex($direction: row);
+    position: fixed;
+    background-color: Teal;
+    color: white;
+
+    .filter-type{
+      height: 1.5rem;
+      padding: 0.5rem 2rem;
+    }
+
+    .filter{
+      cursor: pointer;
+      height: 1.5rem;
+      padding: 0.5rem 2rem;
+      border-left: 1px solid black;
+    }
+
+    .filter:hover{
+      background-color: DarkViolet;
+    }
+  }
+
+  .movie-grid{
+    display: grid;
+    margin-top: 10vh;
+    grid-template-columns: repeat(3, 1fr);
+    overflow-y: auto;
+
+    .movie-link-top{
+      background-color: indigo;
+      text-decoration: none;
+      color: white;
+      width: 70%;
+      padding: 1rem;
+      margin: 1rem 2rem;
+      cursor: pointer;
+      border-radius: 0.5rem;
+
+      .movie-palette-top{
+        @include flex($direction: column);
+
+        .title{
+          font-size: 1.15rem;
+          color: DarkOrange;
+        }
+
+        .info{
+          padding: 0.25rem 0;
+        }
+
+        img{
+          height: 300px;
+          width: 200px;
+        }
+      }
+    }
+
+    .movie-link-top:hover{
+      background-color: DarkViolet;
+    }
+  }
+}
+
+.go-top{
+  color: white;
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  background-color: Teal;
+  padding: 0.75rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.go-top:hover{
+  background-color: blueviolet;
+}
+
+
+@media (max-width: 1100px){
+  .movies{
+    margin-top: 3.5vh;
+
+    .movie-grid{
+
+      .movie-link-top{
+
+        .movie-palette-top{
+
+          img{
+            height: 200px;
+            width: 130px;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 800px){
+  .movies {
+    margin-top: 4.7vh;
+
+    .movie-grid{
+      grid-template-columns: repeat(3, 1fr);
+
+      .movie-link-top{
+        padding: 1rem;
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 500px){
+  .movies {
+    margin-top: 7.8vh;
+
+    .filter-div {
+
+      .filter-type{
+        height: 2.5rem;
+        padding: 0.5rem 1rem;
+      }
+
+      .filter{
+        height: 2.5rem;
+        padding: 0.5rem 1rem;
+      }
+    }
+
+    .movie-grid{
+      grid-template-columns: repeat(2, 1fr);
+
+      .movie-link-top{
+        padding: 1rem;
+        margin: 0.5rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .movies{
+
+    .filter-div{
+
+      .filter-type{
+        height: 2.5rem;
+        padding: 0.5rem 0.75rem;
+      }
+
+      .filter{
+        height: 2.5rem;
+        padding: 0.5rem 0.75rem;
+      }
+    }
+
+    .movie-grid{
+      grid-template-columns: repeat(1, 1fr);
+
+      .movie-link-top{
+        padding: 1rem;
+        margin: 1rem;
+      }
+    }
+  }
+}

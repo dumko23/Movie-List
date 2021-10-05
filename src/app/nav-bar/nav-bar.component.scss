@@ -1,0 +1,166 @@
+@mixin flex($direction: row, $justify: space-around) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+}
+
+.nav-bar{
+  @include flex;
+  width: 100%;
+  top: 0;
+  left: 0;
+  position: fixed;
+  height: 5vh;
+
+  .nav-link{
+    width: 100%;
+    align-items: center;
+    background-color: indigo;
+    padding: 0.25rem 0;
+    cursor: pointer;
+    text-align: center;
+    height: 1.55rem;
+    text-decoration: none;
+    color: white;
+    font-size: 1.15rem;
+  }
+  .nav-link:hover{
+    background-color: DarkViolet;
+  }
+
+  input{
+    height: 2.05rem;
+    border: none;
+    padding: 0 1rem;
+    width: 100%;
+  }
+
+  .search-icon{
+    width: 5vh;
+    text-align: center;
+    background-color: white;
+    cursor: pointer;
+    height: 1.6rem;
+    padding: 0.45rem 0.25rem 0;
+  }
+
+  .search-icon:hover{
+    background-color: DarkViolet;
+  }
+}
+
+.dropdown{
+  position: fixed;
+  top: 5vh;
+  z-index: 2;
+  background-color: indigo;
+  width: 20.75rem;
+  height: 50%;
+  overflow-y: auto;
+  color: white;
+
+  .searchResult{
+    @include flex($direction: row, $justify: left);
+    background-color: DarkViolet;
+    text-decoration: none;
+    color: white;
+    margin: 0.5rem;
+    padding: 0.5rem;
+    width: 70%;
+    border-radius: 0.5rem;
+
+    img{
+      width: 7rem;
+      height: 10rem;
+    }
+
+    .movie-info{
+      @include flex($direction: column);
+      padding-left: 0.5rem;
+    }
+  }
+
+  .searchResult:hover{
+    background-color: BlueViolet;
+  }
+}
+
+.no-result {
+  @include flex($direction: column);
+  position: fixed;
+  top: 5vh;
+  z-index: 2;
+  background-color: Indigo;
+  color: white;
+  width: 19.8rem;
+  height: 3rem;
+  padding-left: 1rem;
+
+}
+
+@media (max-width: 1100px) {
+  .nav-bar{
+
+    .nav-link{
+      width: 85%;
+      padding: 0.15rem;
+      height: 1.4rem;
+      font-size: 1rem;
+    }
+
+    .search-icon{
+      height: 1.4rem;
+      padding: 0.3rem 0.25rem 0;
+    }
+
+    input{
+      height: 1.4rem;
+      padding: 0.15rem;
+    }
+  }
+
+  .dropdown{
+    top: 1.6rem;
+    width: 40%;
+  }
+
+  .no-result{
+    top: 1.7rem;
+    height: 4rem;
+    width: 22.5%;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav-bar {
+    height: 7vh;
+
+    .nav-link {
+      height: 7vh;
+      font-size: 0.75rem;
+    }
+
+    #risky-link{
+      width: 150%;
+    }
+
+    .search-icon{
+      padding: 2vh 1vh;
+    }
+
+    input{
+      width: auto;
+      height: 7vh;
+    }
+  }
+
+  .dropdown{
+    top: 2.8rem;
+    width: 100%;
+  }
+
+  .no-result{
+    top: 2.8rem;
+    width: 100%;
+  }
+}
