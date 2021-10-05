@@ -9,7 +9,7 @@ export const environment = {
   apiUrl200: 'MostPopularMovies',
   apiLinks: `https://imdb-api.com/en/API/ExternalSites`,
   apiMovie: `https://imdb-api.com/en/API/Title`,
-  apiSearch: 'https://imdb-api.com/en/API/SearchMovie/'
+  apiSearch: 'https://imdb-api.com/en/API/SearchMovie'
 };
 
 /*
