@@ -1,3 +1,4 @@
 # Movie-List
-Angular
+Angular.
+
 Selection of Top-ranked movies using free imdb-api.
